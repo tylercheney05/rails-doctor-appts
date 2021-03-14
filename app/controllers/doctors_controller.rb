@@ -1,6 +1,6 @@
 class DoctorsController < ApplicationController
   skip_before_action :verify_authenticity_token #this wasnt in henrys lms project
-  before_action :set_account, only: [:show, :destroy]
+  before_action :set_doctor, except: [ :index, :new, :create ]
 
   def index
     @doctors = Doctor.all
