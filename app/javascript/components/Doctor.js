@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Doctor = ({ doctor }) => {
-  const { doctor_name } = doctor
+  const { doctor_name, id } = doctor
   return (
     <>
       <h1>Doctor: {doctor_name}</h1>

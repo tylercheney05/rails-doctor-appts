@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Doctors = ({ doctors }) => {
   return (
@@ -9,7 +9,7 @@ const Doctors = ({ doctors }) => {
       <h2>{ doctors.length <= 0 ? "No Doctors" : "" }</h2>
       { doctors.map((doctor) => (
         <div>
-          <a href={`/courses/${doctor.id}`}>{doctor.doctor_name}</a>
+          <a href={`/doctors/${doctor.id}`}>{doctor.doctor_name}</a>
         </div>
       ))}
     </>
