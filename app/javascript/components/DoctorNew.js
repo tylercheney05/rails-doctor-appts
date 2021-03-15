@@ -1,8 +1,9 @@
 import React from 'react';
 
 const DoctorNew = ({ doctor }) => {
-  const { doctor_name, errors } = doctor
+  const { doctor_name, specialty, errors } = doctor
   const defaultName = doctor_name ? doctor_name : ""
+  const defaultSpecialty = specialty ? specialty : ""
   return (
     <>
       <h1>Add Doctor</h1>
@@ -13,6 +14,12 @@ const DoctorNew = ({ doctor }) => {
         type="text"
         defaultValue={defaultName}
         name="doctor[doctor_name]"
+        />
+        <input
+        placeholder="Specialty"
+        type="text"
+        defaultValue={defaultSpecialty}
+        name="doctor[specialty]"
         />
         <button type="submit">Add</button>
       </form>
