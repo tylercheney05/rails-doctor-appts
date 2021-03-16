@@ -2,6 +2,8 @@ class AppointmentsController < ApplicationController
   skip_before_action :verify_authenticity_token 
   before_action :authenticate_user!
   before_action :set_doctor
+  before_action :set_patient
+  
   def index
     @appointments = @doctor.appointments
     render component: "Appointments", props: { doctor: @doctor, appointments: @appointments  }
@@ -53,6 +55,9 @@ end
 
 def set_appointment 
   @appointment = Doctor.appointments.find(params[:id])
+end
+def set_patient
+  @patient = Doctor.patients.find(params[:id])
 end
 def appointment_params
     params.require(:appointment).permit(:reason, :text, :date)
