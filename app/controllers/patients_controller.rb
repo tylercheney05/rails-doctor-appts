@@ -7,6 +7,8 @@ class PatientsController < ApplicationController
   end
 
   def show
+    @patient = Patient.find(params[:id])
+    render component: 'Patient', props: { patient: @patient }
   end
 
   def new
@@ -17,13 +19,30 @@ class PatientsController < ApplicationController
   def create
     @patient = Patient.new(patient_params)
     if @patient.save
-      redirect_to patients_path
+      redirect_to patient_path(@patient)
     else
       render component: 'PatientNew', props: { patient: @patient }
     end
   end
 
   def edit
+    @patient = Patient.find(params[:id])
+    render component: 'PatientEdit', props: { patient: @patient}
+  end
+
+  def update
+    @patient = Patient.find(params[:id])
+    if @patient.update(patient_params)
+      redirect_to patient_path(@patient)
+    else
+      render component: 'PatientEdit', props: { patient: @patient }
+    end
+  end
+
+  def destroy
+    @patient = Patient.find(params[:id])
+    @patient.destroy
+    redirect_to patients_path
   end
 
   private

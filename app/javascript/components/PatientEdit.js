@@ -1,18 +1,20 @@
 import React from 'react';
 
-const PatientNew = ({ patient }) => {
-  const {patient_name, age, gender} = patient
+const PatientEdit = ({ patient }) => {
+  const {id, patient_name, age, gender} = patient
   const defaultName = patient_name ? patient_name : ""
   const defaultAge = age ? age : ""
   const defaultGender = gender ? gender : ""
-  return(
+  return (
     <>
-      <h1>New Patient</h1>
-      <form action="/patients" method="post">
-        <input 
-          placeholder="Name"
-          defaultValue={defaultName}
+      <h1>Edit {patient_name}</h1>
+      <form action={`/patients/${id}`} method="post">
+        <input type="hidden" name="_method" value="patch"/>
+        <input
+          placeholder="Patient Name"
+          required
           type="text"
+          defaultValue={defaultName}
           name="patient[patient_name]"
         /><br/>
         <input 
@@ -21,15 +23,14 @@ const PatientNew = ({ patient }) => {
           type="number"
           name="patient[age]"
         /><br/>
-        <select name="patient[gender]" id="gender" required>
+        <select name="patient[gender]" id="gender" defaultValue={defaultGender} required>
           <option value="" disabled selected>Choose Gender</option>
           <option value="female">Female</option>
           <option value="male">Male</option>
-        </select>
-        <br/>
-        <button type="submit">Add Patient</button>
+        </select><br/>
+        <button type="submit">Update</button>
       </form>
     </>
   )
 }
-export default PatientNew;
+export default PatientEdit
