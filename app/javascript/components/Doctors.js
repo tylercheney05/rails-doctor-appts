@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React from 'react';
+=======
+import React from "react";
+>>>>>>> updated appointments controller
 
 const Doctors = ({ doctors }) => {
   return (
@@ -10,11 +14,18 @@ const Doctors = ({ doctors }) => {
       { doctors.map((doctor) => (
         <div>
           <a href={`/doctors/${doctor.id}`}>{doctor.doctor_name}</a>
+<<<<<<< HEAD
           <hr />
+=======
+>>>>>>> updated appointments controller
         </div>
       ))}
     </>
   )
 }
 
+<<<<<<< HEAD
 export default Doctors;
+=======
+export default Doctors;
+>>>>>>> updated appointments controller
