@@ -10,9 +10,9 @@ const Appointments = ({ user, appointments  }) => {
       <h1>Appointments</h1>
       {/* <h2>Welcome {`${first_name}  ${last_name}`}</h2> */}
       <hr />
-      <a href="/doctors/${id}/appointments/new">Add New Appointment</a>
+      <a href='/doctors/${id}/appointments/new'>Add New Appointment</a>
       <br />
-      <h3>Apointments</h3>
+      <h3>Appointments</h3>
       <ul>
         { appointments.map((a) => (
           <li key={a.date}>
