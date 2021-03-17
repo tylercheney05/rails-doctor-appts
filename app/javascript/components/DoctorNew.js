@@ -16,10 +16,10 @@ const DoctorNew = ({ doctor }) => {
         name="doctor[doctor_name]"
         />
         <input
-        placeholder="specialty"
+        placeholder="Specialty"
         type="text"
         defaultValue={defaultSpecialty}
-        name="doctor[Specialty]"
+        name="doctor[specialty]"
         />
         <button type="submit">Add</button>
       </form>
@@ -27,4 +27,4 @@ const DoctorNew = ({ doctor }) => {
   )
 }
 
-export default DoctorNew; 
+export default DoctorNew;

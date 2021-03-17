@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Doctors = ({ doctors }) => {
   return (
@@ -10,6 +10,7 @@ const Doctors = ({ doctors }) => {
       { doctors.map((doctor) => (
         <div>
           <a href={`/doctors/${doctor.id}`}>{doctor.doctor_name}</a>
+          <hr />
         </div>
       ))}
     </>

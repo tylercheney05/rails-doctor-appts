@@ -11,7 +11,6 @@ class DoctorsController < ApplicationController
   end
 
   def show
-
     render component: "Doctor", props: { doctor: @doctor }
   end
 
@@ -55,7 +54,7 @@ class DoctorsController < ApplicationController
     end
 
     def doctor_params
-      params.require(:doctor).permit(:id)
+      params.require(:doctor).permit(:doctor_name)
     end
 
 end
