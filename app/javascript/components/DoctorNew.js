@@ -16,17 +16,10 @@ const DoctorNew = ({ doctor }) => {
         name="doctor[doctor_name]"
         />
         <input
-<<<<<<< HEAD
-        placeholder="Specialty"
-        type="text"
-        defaultValue={defaultSpecialty}
-        name="doctor[specialty]"
-=======
         placeholder="specialty"
         type="text"
         defaultValue={defaultSpecialty}
         name="doctor[Specialty]"
->>>>>>> updated appointments controller
         />
         <button type="submit">Add</button>
       </form>
@@ -34,8 +27,4 @@ const DoctorNew = ({ doctor }) => {
   )
 }
 
-<<<<<<< HEAD
-export default DoctorNew;
-=======
 export default DoctorNew; 
->>>>>>> updated appointments controller

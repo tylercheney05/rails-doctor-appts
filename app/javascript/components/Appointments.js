@@ -1,27 +1,21 @@
 import React from 'react';
 
 
-const Appointments = ({ user, appointments  }) => {
+const Appointments = ({ doctor, appointments, patients  }) => {
   const { date, notes, reason } = appointments
-  // const { first_name, last_name } = user 
-  return (
+  const { patient_name  } = patients 
+  return(
     <>
-    
-      <h1>Appointments</h1>
-      {/* <h2>Welcome {`${first_name}  ${last_name}`}</h2> */}
-      <hr />
-      <a href='/doctors/${id}/appointments/new'>Add New Appointment</a>
+      <h1> Appiontments</h1>
+      <a href={`/doctors/${doctor.id}/appointments/new`}>Add Appointment</a>
       <br />
-      <h3>Appointments</h3>
-      <ul>
-        { appointments.map((a) => (
-          <li key={a.date}>
-            {a.reason} 
-            {a.notes}
-          </li>
+      <h2>Appointments</h2>
+      { appointments.map( (t) => (
+        <div>
           
-        ))}
-      </ul>
+        </div>
+      ))}
+      
     </>
   )
 }

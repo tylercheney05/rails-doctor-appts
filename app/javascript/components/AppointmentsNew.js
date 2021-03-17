@@ -1,36 +1,35 @@
 import React from 'react';
 
-const AppointmentNew = ({ doctor, appointment }) => {
-  const { id  } = doctor
-  const { reason, date, text, errors } = appointment
+const AppointmentNew = ({ doctor, appointment, patients }) => {
+  const { doctor_id  } = doctor
   const defaultReason = reason ? reason : ""
-  const defaultText = text ? text : ""
+  const defaultNote = note ? note : ""
   const defaultDate = date ? date : ""
   
-
+z
   
   return (
     <>
       <h1>Add Appointment</h1>
       { errors && errors }
-      <form action={`/doctors/`} method= "post">
-      <input type="hidden" name="doctor[user_id]" value={id} />
+      <form action={`/doctors/${doctor.id}/appointments`} method= "post">
+      <input type="hidden" name="appointment[appointment_id]" value={id} />
       <input
           placeholder="Reason"
           defaultValue={defaultReason}
           type="text"
-          name="appointmentreason]"
+          name="appointment[reason]"
         /><br/>
-        <textarea
+        <input
           placeholder="Date"
           defaultValue={defaultDate}
           name="appointment[date]"
         /><br/>
         <input
           placeholder="Notes"
-          defaultValue={defaultText}
+          defaultValue={defaultNote}
           type="text"
-          name="appointment[text]"
+          name="appointment[notes]"
         /><br/>
         />
         <button type="submit">Add</button>

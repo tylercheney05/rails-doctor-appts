@@ -1,5 +1,5 @@
 import React from 'react';
-import AppointmentNew from './AppointmentsNew';
+
 
 const Appointment = ({ appointment }) => {
   const { reason, text, date } = appointment;

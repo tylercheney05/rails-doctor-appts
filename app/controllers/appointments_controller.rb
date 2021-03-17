@@ -1,71 +1,66 @@
 class AppointmentsController < ApplicationController
   skip_before_action :verify_authenticity_token 
-  before_action :authenticate_user!
   before_action :set_doctor
-  before_action :set_patient
-  
+ 
   def index
-<<<<<<< HEAD
-  end
-
-=======
-    @appointments = @doctor.appointments
-    render component: "Appointments", props: { doctor: @doctor, appointments: @appointments  }
+    @appointments = @doctor.appointments.all
+    @patients = Patient.all
+    render component: "Appointments", props: { doctor: @doctor, appointments: @appointments, patients: @patients }
   end  
->>>>>>> updated appointments controller
-  def show
-    @appointment = @doctor.appointments.find(params[:id])
-    render component: "Appointment", props: {  doctor: @doctor, appointments: @appointments }
-  end
+  # def show
+  #   @appointment = @doctor.appointments.find(params[:id])
+  #   render component: "Appointment", props: {  doctor: @doctor, appointment: @appointment, patients: @patients }
+  # end
 
   def new
     @appointment = @doctor.appointments.new
-    render component: "AppointmentsNew", props: { doctor: @doctor, appointment: @appointment }
+    @patients = Patient.all
+    render component: "AppointmentNew", props: { doctor: @doctor, appointment: @appointment, patients: @patients }
   end
 
 def create
+  
   @appointment = @doctor.appointments.new(appointment_params)
-  if @appointment.save
-    redirect_to root_path
+   if @appointment.save
+    redirect_to doctor_appointments_path(@doctor)
+  
   else
-    render component: "AppointmentsNew", props: { doctor: @doctors, appointment: @appointment}
+    @patients = Patient.all
+    render component: "AppointmentNew", props: { doctor: @doctor, appointment: @appointment, patients: @patients  }
   end
 end
 
-def edit
-  @appointment = @doctors.appointment.find(params[:id])
-  render component: 'AppointmentsEdit', props: { doctor: @doctors, appointment: @appointment }
-end
+# def edit
+#   @appointment = @doctors.appointment.find(params[:id])
+#   render component: 'AppointmentsEdit', props: { doctor: @doctor, appointment: @appointment }
+# end
 
-def update
-  @appointment = @doctors.appointment.new(appointment_params)
-  if @appointment.update(department_params)
-    redirect_to root_path
-  else
-    render component: "AppointmentsNew", props: { doctor: @doctors, appointment: @appointment }
-  end
-end
+# def update
+#   @appointment = Doctor.appointments.new(appointment_params)
+#   if @appointment.update(department_params)
+#     redirect_to root_path
+#   else
+#     render component: "AppointmentNew", props: { doctor: @doctor, appointment: @appointment }
+#   end
+# end
 
 def destroy
-  @appointment = @doctors.appointments.find(params[:id])
+  @appointment = @doctors.appointment.find(params[:id])
   @appointment.destroy 
   redirect_to root_path
 end
 
 
 private 
+
 def set_doctor
   @doctor = Doctor.find(params[:doctor_id])
 end
 
-def set_appointment 
-  @appointment = Doctor.appointments.find(params[:id])
-end
-def set_patient
-  @patient = Doctor.patients.find(params[:id])
-end
+
+
 def appointment_params
-    params.require(:appointment).permit(:reason, :text, :date)
+    params.require(:appointments).permit(:reason, :notes, :date, :doctor_id, :patient_id )
   end
 end
 
