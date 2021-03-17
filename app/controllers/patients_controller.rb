@@ -19,8 +19,10 @@ class PatientsController < ApplicationController
   def create
     @patient = Patient.new(patient_params)
     if @patient.save
+      flash[:success] = "Patient Created"
       redirect_to patient_path(@patient)
     else
+      flash[:error] = "Error #{@patient.errors.full_messages.join("\n")}"
       render component: 'PatientNew', props: { patient: @patient }
     end
   end
@@ -33,8 +35,10 @@ class PatientsController < ApplicationController
   def update
     @patient = Patient.find(params[:id])
     if @patient.update(patient_params)
+      flash[:success] = "Patient Updated"
       redirect_to patient_path(@patient)
     else
+      flash[:error] = "Error #{@patient.errors.full_messages.join("\n")}"
       render component: 'PatientEdit', props: { patient: @patient }
     end
   end

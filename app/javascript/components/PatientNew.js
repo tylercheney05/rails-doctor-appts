@@ -7,6 +7,7 @@ const PatientNew = ({ patient }) => {
   const defaultGender = gender ? gender : ""
   return(
     <>
+      <a href="/patients">Back to Patients</a>
       <h1>New Patient</h1>
       <form action="/patients" method="post">
         <input 

@@ -3,7 +3,7 @@ import React from 'react';
 const Navbar = () => (
   <nav>
     <ul>
-    <li>
+      <li>
         <a href="/">Home</a>
       </li>
       <li>
@@ -14,6 +14,9 @@ const Navbar = () => (
       </li>
       <li>
         <a href="/users/sign_out" data-method="delete">Log Out</a>
+      </li>
+      <li>
+        <a href="/users/sign_up">Sign Up</a>
       </li>
     </ul>
   </nav>
