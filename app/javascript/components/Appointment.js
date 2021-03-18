@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const Appointment = ({ appointment }) => {
   const { reason, text, date } = appointment;
   return (

@@ -12,11 +12,13 @@ class AppointmentsController < ApplicationController
     render component: "Appointment", props: {  doctor: @doctor, appointment: @appointment, patients: @patients }
   end
 
+
   def new
     @appointment = @doctor.appointments.new
     @patients = Patient.all
     render component: "AppointmentNew", props: { doctor: @doctor, appointment: @appointment, patients: @patients }
-  end
+  
+end
 
 def create
 
@@ -63,4 +65,3 @@ def appointment_params
     params.require(:appointment).permit(:reason, :notes, :date, :patient_id )
   end
 end
-
