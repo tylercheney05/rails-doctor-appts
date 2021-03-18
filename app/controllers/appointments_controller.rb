@@ -47,7 +47,7 @@ end
 # end
 
 def destroy
-  @appointment = @doctors.appointment.find(params[:id])
+  @appointment = @doctor.appointments.find(params[:id])
   @appointment.destroy
   redirect_to root_path
 end

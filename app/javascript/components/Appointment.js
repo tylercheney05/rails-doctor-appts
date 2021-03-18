@@ -11,6 +11,8 @@ const Appointment = ({ doctor, appointment, patients }) => {
       <h3>Text: {notes}</h3>
       <hr />
       <a href={`/doctors/${doctor.id}/appointments/`}>Appointments</a>
+      <br/>
+      <a href={`/doctors/${doctor.id}/appointments/${appointment.id}`} data-method="delete">Delete Appointment</a>
     </>
   )
 }
