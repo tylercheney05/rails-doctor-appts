@@ -15,4 +15,4 @@ const Appointment = ({ appointment }) => {
   )
 }
 
-export default AppointmentNew;
+export default Appointment;

@@ -8,7 +8,7 @@ class PatientsController < ApplicationController
 
   def show
     @patient = Patient.find(params[:id])
-    render component: 'Patient', props: { patient: @patient }
+    render component: 'Patient', props: { patient: @patient, doctors: @patient.doctors}
   end
 
   def new

@@ -59,8 +59,6 @@ def set_doctor
   @doctor = Doctor.find(params[:doctor_id])
 end
 
-
-
 def appointment_params
     params.require(:appointment).permit(:reason, :notes, :date, :patient_id )
   end
