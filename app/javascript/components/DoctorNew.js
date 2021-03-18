@@ -1,5 +1,4 @@
 import React from 'react';
-
 const DoctorNew = ({ doctor }) => {
   const { doctor_name, specialty, errors } = doctor
   const defaultName = doctor_name ? doctor_name : ""
@@ -16,7 +15,7 @@ const DoctorNew = ({ doctor }) => {
         name="doctor[doctor_name]"
         />
         <input
-        placeholder="specialty"
+        placeholder="Specialty"
         type="text"
         defaultValue={defaultSpecialty}
         name="doctor[specialty]"
@@ -26,5 +25,4 @@ const DoctorNew = ({ doctor }) => {
     </>
   )
 }
-
-export default DoctorNew; 
+export default DoctorNew;
