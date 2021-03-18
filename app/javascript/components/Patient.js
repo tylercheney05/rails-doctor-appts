@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Patient = ({ patient }) => {
+const Patient = ({ patient, doctors }) => {
   const {id, patient_name, age, gender} = patient
   return (
     <>
@@ -9,8 +9,14 @@ const Patient = ({ patient }) => {
       <h1>{patient_name}</h1>
       <h3>Age: {age}</h3>
       <h3>Gender: {gender}</h3>
-      <a href={`/patients/${id}/appointments/new`}>Schedule an appointment</a><br/>
-      <a href={`/patients/${id}/appointments/`}>View appointments</a>
+      <h3>Doctors:</h3>
+      <ul>
+        {doctors.map( (d) => (
+          <li>
+            <a href={`/doctors/${d.id}`}>{d.doctor_name}</a>
+          </li>
+        ))}
+      </ul>
     </>
   )
 }
