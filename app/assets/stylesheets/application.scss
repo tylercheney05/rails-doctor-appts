@@ -13,3 +13,33 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "flash";
+ @import "semantic-ui";
+
+ nav {
+   background-color: lightgray;
+ }
+
+ ul {
+   list-style: none;
+ }
+
+ nav ul {
+  display: flex;
+  justify-content: center;
+ }
+
+ nav li {
+   display: inline;
+   margin: 20px;
+ }
+ 
+ .home {
+   text-align: center;
+ }
+
+ .box {
+   display: flex;
+   justify-content: space-around;
+ }

@@ -4,6 +4,7 @@ const Patient = ({ patient }) => {
   const {id, patient_name, age, gender} = patient
   return (
     <>
+      <a href="/patients">Back to Patients</a><br/>
       <a href={`/patients/${id}/edit`}>Edit Patient</a>
       <h1>{patient_name}</h1>
       <h3>Age: {age}</h3>

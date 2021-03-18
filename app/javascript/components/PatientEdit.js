@@ -7,6 +7,7 @@ const PatientEdit = ({ patient }) => {
   const defaultGender = gender ? gender : ""
   return (
     <>
+      <a href="/patients">Back to Patients</a>
       <h1>Edit {patient_name}</h1>
       <form action={`/patients/${id}`} method="post">
         <input type="hidden" name="_method" value="patch"/>
