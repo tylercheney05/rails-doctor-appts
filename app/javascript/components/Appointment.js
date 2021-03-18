@@ -1,16 +1,16 @@
 import React from 'react';
 
-const Appointment = ({ appointment }) => {
-  const { reason, text, date } = appointment;
+const Appointment = ({ doctor, appointment, patients }) => {
+  const { reason, notes, date } = appointment;
   return (
     <>
-      <h1>Date: {date}</h1>
+      <h3>Date: {date}</h3>
       <hr />
-      <h1>Reason: {reason}</h1>
+      <h3>Reason: {reason}</h3>
       <hr />
-      <h1>Text: {text}</h1>
+      <h3>Text: {notes}</h3>
       <hr />
-      <a href={`/doctors/${id}/appointments/`}>Appointments</a>
+      <a href={`/doctors/${doctor.id}/appointments/`}>Appointments</a>
     </>
   )
 }
