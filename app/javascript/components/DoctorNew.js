@@ -19,7 +19,7 @@ const DoctorNew = ({ doctor }) => {
         placeholder="specialty"
         type="text"
         defaultValue={defaultSpecialty}
-        name="doctor[Specialty]"
+        name="doctor[specialty]"
         />
         <button type="submit">Add</button>
       </form>
