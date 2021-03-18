@@ -7,7 +7,7 @@ const Appointments = ({ doctor, appointments, patients  }) => {
   const { doctor_name} = doctor
   return(
     <>
-      <h1> Appiontments</h1>
+      <h1> Appointments</h1>
       <a href={`/doctors/${doctor.id}/appointments/new`}>Add Appointment</a>
       <br />
       <h2>Appointments for Dr. {doctor_name}</h2>
