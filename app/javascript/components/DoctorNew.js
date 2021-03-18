@@ -16,7 +16,7 @@ const DoctorNew = ({ doctor }) => {
         name="doctor[doctor_name]"
         />
         <input
-        placeholder="Specialty"
+        placeholder="specialty"
         type="text"
         defaultValue={defaultSpecialty}
         name="doctor[specialty]"
@@ -27,4 +27,4 @@ const DoctorNew = ({ doctor }) => {
   )
 }
 
-export default DoctorNew;
+export default DoctorNew; 
